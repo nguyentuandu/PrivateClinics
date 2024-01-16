@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+{%block head%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css  ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/doctor-login.css')}}">
+</head>
+{%endblock%}
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-light text-dark">
+    <div class="container-fluid">
+        <img class="logo_image" src="{{url_for('static',filename='/image/logo1.jpg')}}"
+             style="width:100px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+
+
+                {%if current_user.is_authenticated and current_user.user_role.name=='BACSI' %}
+               <div class="d-flex">
+                <a href="/doctor_logout"class="nav-link px-4 text-dark">Đăng Xuất</a>
+               </div>
+            {%else %}
+            <div class="d-flex">
+                <a href="/doctor"class="nav-link px-4 text-dark">Đăng Nhập</a>
+            </div>
+            {% endif%}
+        </div>
+    </div>
+</nav>
+{%block content%}
+<form action="/doctor" method="POST">
+  <div class="imgcontainer">
+    <h1>Đăng Nhập Trang Bác Sĩ</h1>
+  </div>
+
+  <div class="container">
+    <label for="DTname"><b>Tên đăng nhập </b></label>
+    <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+    <label for="DTpassword"><b>Mật khẩu</b></label>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+    <button type="submit">Đăng Nhập</button>
+  </div>
+</form>
+{%endblock%}
+</body>
+</html>

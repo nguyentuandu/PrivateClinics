@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block head%}
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<title>Login</title>
+{%endblock%}
+{% block content %}
+{% if err_msg %}
+{{err_msg}}
+{%endif%}
+
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<form method="post" id="loginForm" action="/login">
+											<h4 class="mb-4 pb-3">Log In</h4>
+											<div class="form-group">
+												<input type="text" name="username" class="form-style" placeholder="username" id="username" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>
+											<div class="form-group mt-2">
+												<input type="password" name="password" class="form-style" placeholder="password" id="password" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+												<button class="btn mt-4" type="submit">Đăng nhập</button>
+											</form>
+				      					</div>
+			      					</div>
+			      				</div>
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<form method="post" action="/register" id="registerForm">
+											<h4 class="mb-4 pb-3">Sign Up</h4>
+											<div class="form-group">
+												<input type="text" name="registerName" class="form-style" placeholder="username" id="registerName" autocomplete="off">
+												<i class="input-icon uil uil-user"></i>
+											</div>
+											<div class="form-group mt-2">
+												<input type="email" name="registerEmail" class="form-style" placeholder="email" id="registerEmail" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>
+											<div class="form-group mt-2">
+												<input type="password" name="registerPassword" class="form-style" placeholder="password" id="registerPassword" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+												<div class="form-group mt-2">
+												<input type="password" name="registerConfirmPassword" class="form-style" placeholder="confirm password" id="registerConfirmPassword" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<button class="btn mt-4" type="submit">Đăng ký</button>
+											</form>
+				      					</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+{% endblock %}

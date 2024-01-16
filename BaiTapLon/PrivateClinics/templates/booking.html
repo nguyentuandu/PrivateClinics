@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% block head%}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css  ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/booking.css')}}">
+    <title>{% block title%}Giới Thiệu{%endblock%}</title>
+    {%endblock%}
+
+{% block content%}
+<div class="container">
+    <h2 style="text-align:center">ĐẶT LỊCH KHÁM</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endwith %}
+    <form id="bookingForm" method="POST" class="needs-validation" novalidate>
+        <label for="tenBN">Họ Và Tên</label>
+        <input type="text" id="tenBN" name="tenBN" placeholder="Nhập họ và tên..." required/>
+
+        <label for="SDT">Số Điện Thoại</label>
+        <input type="text" id="SDT" name="SDT" placeholder="Nhập số điện thoại..." required/>
+
+        <label for="diaChi">Địa Chỉ</label>
+        <input type="text" id="diaChi" name="diaChi" placeholder="Nhập địa chỉ..." required/>
+
+        <label for="namSinh">Năm sinh</label>
+        <input type="text" id="namSinh" name="namSinh" placeholder="Nhập năm sinh..." required/>
+
+        <label for="ngayDL">Ngày Đặt Lịch</label>
+        <input type="date" id="ngayDL" name="ngayDL" required/>
+
+        <label for="gioiTinh">Giới Tính </label>
+        <select id="gioiTinh" name="gioiTinh" class="form-control">
+            <option class="form-control" value="NAM" name="gioiTinh" selected>NAM</option>
+            <option class="form-control" value="NỮ" name="gioiTinh">NỮ</option>
+            <option class="form-control" value="KHÁC" name="gioiTinh">KHÁC</option>
+          </select>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock%}

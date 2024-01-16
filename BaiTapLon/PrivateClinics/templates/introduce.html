@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+ {% block head%}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css  ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/introduce.css')}}">
+    <title>{% block title%}Giới Thiệu{%endblock%}</title>
+    {%endblock%}
+
+{% block content %}
+    	  <section id="feature">
+        <div class="title-text">
+            <p>ABOUT</p>
+        </div>
+        <div class="feature-box">
+            <div class="features">
+                <h1>Tận Tâm</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <div class="features-text">
+                       <p>In the first part of this series on workforce diversity.</p>
+                    </div>
+                </div>
+                <h1>Trách Nhiệm</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div class="features-text">
+                       <p>In the the first part of this series on workforce diversity.</p>
+                    </div>
+                </div>
+                <h1>Hiện Đại</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class="fa-solid fa-house-medical"></i>
+                    </div>
+                    <div class="features-text">
+                       <p>In the first part of this series on workforce diversity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="features-images">
+                <img src="static/image/introduce.jpg">
+            </div>
+         </div>
+         <div class="feature-box">
+            <div class="features-images">
+                <img src="static/image/introduce2.jpg">
+            </div>
+            <div class="features">
+                <h1>An Toàn</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class="fa-solid fa-hospital"></i>
+                    </div>
+                    <div class="features-text">
+                       <p>In the first part of this series on workforce diversity.</p>
+                    </div>
+                </div>
+                <h1>Hiệu Quả</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class="fa-sharp fa-solid fa-syringe"></i>
+                    </div>
+                    <div class="features-text">
+                       <p>In the first part of this series on workforce diversity.</p>
+                    </div>
+                </div>
+                <h1>Thân Thiện</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <div class="features-text">
+                       <p>In the first part of this series on workforce diversity.</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+  <section id="service">
+        <div class="title-text">
+            <p>DỊCH VỤ</p>
+        </div>
+        <div class="service-box">
+            <div class="service-single">
+                <img src="static/image/introduce3.jpg" alt="pic1">
+                <div class="overplay"></div>
+                <div class="service-desc">
+                    <h3>Kinh Nghiệm</h3>
+                    <hr>
+                    <p>Chia sẻ kinh nghiệm hướng tới thành công. Là người dẫn đầu, vươn tầm quốc tế.</p>
+                </div>
+            </div>
+            <div class="service-single">
+                <img src="static/image/introduce4.jpg" alt="pic1">
+                <div class="overplay"></div>
+                <div class="service-desc">
+                    <h3>Dẫn Đầu</h3>
+                    <hr>
+                    <p>Chia sẻ kinh nghiệm hướng tới thành công. Là người dẫn đầu, vươn tầm quốc tế.</p>
+                </div>
+            </div>
+            <div class="service-single">
+                <img src="static/image/introduce5.jpg" alt="pic1">
+                <div class="overplay"></div>
+                <div class="service-desc">
+                    <h3>Hợp Tác</h3>
+                    <hr>
+                    <p>Chia sẻ kinh nghiệm hướng tới thành công. Là người dẫn đầu, vươn tầm quốc tế.</p>
+                </div>
+            </div>
+            <div class="service-single">
+                <img src="static/image/introduce6.jpg" alt="pic1">
+                <div class="overplay"></div>
+                <div class="service-desc">
+                    <h3>Yêu Thương</h3>
+                    <hr>
+                    <p>Chia sẻ kinh nghiệm hướng tới thành công. Là người dẫn đầu, vươn tầm quốc tế.</p>
+                </div>
+            </div>
+  </section>
+{% endblock %}
+
+{% block modal %}
+{% endblock %}

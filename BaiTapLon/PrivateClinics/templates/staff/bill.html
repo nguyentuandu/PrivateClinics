@@ -1,0 +1,56 @@
+{%extends 'staff/staff_login.html'%}
+{%block head%}
+<meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Phiếu Khám</title>
+{%endblock%}
+{%block content%}
+<h1 class="text-center"> Danh sách hóa đơn </h1>
+<p></p>
+<div class="container">
+    <form method="post" action="/bills_staff">
+        <div class="form-group" style="display:flex">
+            <input type="text" placeholder="Nhập mã Hóa Đơn" name="medicine_bill_id" class="form-control"/>
+             <input class="btn btn-info"type="submit" value="Tìm"/>
+        </div>
+
+    </form>
+</div>
+<p></p>
+<div class="table container">
+    <table class="table">
+        <tr>
+            <th>Mã HĐ</th>
+            <th>Họ tên</th>
+            <th>Ngày khám</th>
+            <th>Tiền khám</th>
+            <th>Tiền thuốc</th>
+            <th>Tổng cộng</th>
+            <th>Trạng thái</th>
+        </tr>
+        {% for b in bills %}
+        <tr class="bills">
+            <td>{{ b.id}}</td>
+            <td>{{ b.tenHD }}</td>
+            <td>{{ b.ngayLapHD }}</td>
+            <td>{{ "{:,.0f}".format(b.tienKham) }}</td>
+            <td>{{ "{:,.0f}".format(b.tienThuoc) }}</td>
+            <td>{{ "{:,.0f}".format(b.tienKham + b.tienThuoc) }}</td>
+            {% if b.trangThai %}
+            <td><p style="color: red;">Đã thanh toán</p></td>
+            {% else %}
+            <td>
+                <input type="button" class="btn btn-info" value="Thanh toán" onclick="pay({{b.id}})">
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<script src="{{ url_for('static', filename='js/bill.js') }}"></script>
+{%endblock%}

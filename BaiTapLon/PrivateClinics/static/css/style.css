@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    box-sizing:border-box;
+}
+.logo_image{
+    max-width:100%;
+}
+.navbar-toggler{
+background-color:#339999;
+}
+.text-bold{
+font-weight:600;
+}
+a.text-dark:hover {
+    font-weight:bold;
+    color: #0dcaf0 !important;
+}
+.carousel-inner img{
+    height:600px;
+
+}
+.doctors_items{
+margin-bottom: 40px;
+}
+.description_doctors{
+ margin: 40px auto;
+ font-family: "Inter", Sans-serif;
+ }
+.description_doctors>p{
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+}
+.description_doctors h1{
+    font-weight:600;
+}
+.description_doctors b{
+    color: #339999 !important;
+    font-weight: 300;
+    letter-spacing: -2.4px;
+}
+.customer_reviews{
+    background-image:url('https://thethemedemo.com/mexi/wp-content/uploads/2021/02/testimonial-bg1.jpg');
+
+}
+.description_customer{
+    padding:40px 0;
+}
+.cart_customer{
+    display: flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items:center;
+}
+.text-review{
+    margin:20px 0;
+    flex-wrap: wrap;
+    width: 585px;
+ }
+.customer_address{
+    color: #339999
+}
+.footer_container{
+    padding-top:20px;
+}
+.social i{
+padding:15px 10px;
+}
+.btn-outline-info:hover {
+    background-color: #fff !important;
+}

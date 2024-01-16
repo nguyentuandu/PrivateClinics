@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% block head%}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css  ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+    <title>{% block title%}{%endblock%}</title>
+    {%endblock%}
+</head>
+<body>
+{%include 'layout/header.html'%}
+{%block content%}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{url_for('static',filename='/image/bg.jpg')}}" style="height:550px, width:800px" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static',filename='/image/bg2.jpg')}}"style="height:550px, width:800px" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static',filename='/image/bg3.jpg')}}"style="height:550px, width:800px" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="doctors_items">
+    <div class="description_doctors">
+        <p class="text-center">Liên Hệ Các Bác Sĩ Của Chúng Tôi</p>
+        <h2 class="text-center"> Chuyên Nghiệp & <b>Tận Tình </b> </h2>
+    </div>
+    <div class="d-flex justify-content-around  mb-3" style="flex-wrap: wrap">
+        <div class="card" style="width:300px; border-radius:12px;margin-top:5px;">
+            <img class="card-img-top" src="{{url_for('static',filename='/image/doctor6.jpg')}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title text-center">BS. Nguyễn Trọng Tiến </h4>
+              <p class="card-text text-center">Khoa phụ sản – Bs.Tiến 20 năm kinh nghiệm tại các bệnh viện Hùng Vương, Quốc tế phụ sản, và bệnh viện Hoàn Mỹ.</p>
+             </div>
+        </div>
+        <div class="card" style="width:300px ; border-radius:12px; margin-top:5px;">
+            <img class="card-img-top" src="{{url_for('static',filename='/image/doctor5.jpg')}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title text-center">BS. Ngô Văn Nam</h4>
+              <p class="card-text text-center">Khoa nhi – Bs.Nam hơn 10 năm kinh nghiệm tại các bệnh viện Thủ Đức, Vạn Phúc, Hồng Đức II</p>
+             </div>
+        </div>
+        <div class="card" style="width:300px ; border-radius:12px;margin-top:5px;">
+            <img class="card-img-top" src="{{url_for('static',filename='/image/doctor7.jpg')}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title text-center">BS.Đào Lê Phương Hoa </h4>
+              <p class="card-text text-center">Khoa nội – Bs.Hoa hơn 8 năm kinh nghiệm tại bệnh viện Đa Khoa Đăk Nông </p>
+             </div>
+        </div>
+  </div>
+</div>
+<div class="customer_reviews">
+    <div class="description_customer">
+        <h2 class="text-info text-center">ĐÁNH GIÁ KHÁCH HÀNG</h2>
+        <h5 class="text-info text-center"> MEXI luôn nhận được sự đóng góp hài lòng từ khách hàng trong suốt thời gian qua</h5>
+    </div>
+   <div class="cart_customer ">
+        <div><img src="{{url_for('static',filename='/image/customer2.jpg')}}" alt=""></div>
+        <div class="text-review text-center">Tôi rất cảm ơn khi nhân viên, bác sĩ hướng dẫn tôi tận tình,
+        giờ đây tôi có thể tự mình theo dõi sức khỏe cũng như đăng ký khám bệnh trên app mà không cần ai hướng dẫn nữa</div>
+        <div class="customer_address">
+            <h2 class="text-center">Steven Gerrard</h2>
+            <p class="text-center">Golden Lotus Apartment, Brooklyn, USA</p>
+         </div>
+    </div>
+</div>
+{%endblock%}
+{%include 'layout/footer.html'%}
+
+{%block js%}{%endblock%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
